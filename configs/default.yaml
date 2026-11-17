@@ -1,0 +1,19 @@
+seed: 42
+target_column: re.admission.within.6.months
+
+paths:
+  raw_clinical: data/raw/dat.csv
+  raw_medication: data/raw/dat_md.csv
+  processed_data: data/processed/heart_failure_processed.csv
+  models_dir: models
+  reports_dir: reports
+
+data:
+  patient_id_column: inpatient.number
+  test_size: 0.20
+  missing_column_threshold: 0.25
+  missing_row_threshold: 0.20
+
+training:
+  cv_folds: 5
+  scoring: roc_auc

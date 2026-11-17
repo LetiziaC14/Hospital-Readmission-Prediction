@@ -1,0 +1,24 @@
+# Raw clinical data and generated artefacts
+data/raw/*
+data/interim/*
+data/processed/*
+models/*
+reports/figures/*
+reports/metrics/*.json
+
+# Keep the folder structure in Git
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+!models/.gitkeep
+!reports/figures/.gitkeep
+!reports/metrics/.gitkeep
+
+# Python and notebooks
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+*.ipynb_checkpoints
+SLHD_updated_02_06.ipynb
