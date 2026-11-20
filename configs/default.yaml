@@ -16,4 +16,7 @@ data:
 
 training:
   cv_folds: 5
-  scoring: roc_auc
+  scoring: balanced_accuracy
+  lasso_selection_frequency: 0.60
+  permutation_features: 40
+  n_jobs: -1

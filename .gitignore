@@ -1,24 +1,73 @@
-# Raw clinical data and generated artefacts
+# -----------------------------------------------------------------------------
+# Clinical data and generated datasets
+# -----------------------------------------------------------------------------
 data/raw/*
 data/interim/*
 data/processed/*
-models/*
-reports/figures/*
-reports/metrics/*.json
 
-# Keep the folder structure in Git
+# Keep the directory structure and documentation in Git
 !data/raw/.gitkeep
 !data/interim/.gitkeep
 !data/processed/.gitkeep
+!data/README.md
+
+# -----------------------------------------------------------------------------
+# Trained models and generated reports
+# -----------------------------------------------------------------------------
+models/*
+reports/figures/*
+reports/metrics/*
+
 !models/.gitkeep
 !reports/figures/.gitkeep
 !reports/metrics/.gitkeep
 
-# Python and notebooks
+# Model artefacts accidentally created elsewhere
+*.joblib
+*.pkl
+*.pickle
+
+# A curated reports/final directory can be committed for the README/site.
+!reports/final/
+!reports/final/**
+
+# -----------------------------------------------------------------------------
+# Python environments, builds and caches
+# -----------------------------------------------------------------------------
+.venv/
+venv/
+env/
+.conda/
 __pycache__/
 *.py[cod]
+*$py.class
+build/
+dist/
+*.egg-info/
 .pytest_cache/
 .ruff_cache/
-.venv/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# -----------------------------------------------------------------------------
+# Jupyter
+# -----------------------------------------------------------------------------
 *.ipynb_checkpoints
+
+# The original notebook contains embedded outputs. Publish a reviewed/sanitized
+# copy under notebooks/ if desired.
 SLHD_updated_02_06.ipynb
+
+# -----------------------------------------------------------------------------
+# Secrets, local configuration, logs and editor/OS files
+# -----------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.log
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini

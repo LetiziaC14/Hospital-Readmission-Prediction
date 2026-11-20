@@ -30,4 +30,11 @@ python scripts/train.py --pipeline all
 python scripts/evaluate.py --pipeline all
 ```
 
-The clinical preprocessing rules still need to be transferred from the notebook into `src/heart_failure/cleaning.py`, one verified block at a time. This scaffold deliberately does not modify the notebook or the existing CSV files.
+The scripts reproduce the notebook workflow with four final strategies:
+
+- VIF + stable LASSO selection + logistic regression;
+- Elastic Net selection + RBF SVM;
+- Random Forest tuning + Gini/RFECV selection;
+- Random Forest tuning + permutation-importance selection.
+
+`train.py --pipeline all` can take a long time because the Random Forest grid search and RFECV perform many fits. Each pipeline can be run separately. Generated datasets, models, metrics and figures are ignored by Git; the original notebook and raw CSV files are never modified.
